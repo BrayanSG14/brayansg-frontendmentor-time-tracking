@@ -1,0 +1,235 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  background-color: #0f1424;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 24px;
+}
+
+main {
+  width: 100%;
+  max-width: 1110px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.profile {
+  background-color: #1c1f4a;
+  border-radius: 15px;
+}
+
+.profile-info {
+  background-color: #5847eb;
+  border-radius: 15px;
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border: 3px solid white;
+  border-radius: 50%;
+}
+
+.report-for {
+  color: #bdc1ff;
+  font-size: 0.9375rem;
+}
+
+.profile-name {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 32px;
+}
+
+.btn-tab {
+  background: none;
+  border: none;
+  color: #6f76c8;
+  font-family: "Rubik", sans-serif;
+  font-size: 1.125rem;
+}
+
+.btn-tab:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.btn-tab:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 4px;
+}
+
+.btn-tab.active {
+  color: white;
+}
+
+.card {
+  border-radius: 15px;
+  padding-top: 38px;
+  background-repeat: no-repeat;
+  background-position: right 17px top -10px;
+}
+
+.card-work {
+  background-color: #ff8c66;
+  background-image: url("./images/icon-work.svg");
+}
+
+.card-play {
+  background-color: #56c2e6;
+  background-image: url("./images/icon-play.svg");
+}
+
+.card-study {
+  background-color: #ff5c7c;
+  background-image: url("./images/icon-study.svg");
+}
+
+.card-exercise {
+  background-color: #4acf81;
+  background-image: url("./images/icon-exercise.svg");
+}
+
+.card-social {
+  background-color: #7536d3;
+  background-image: url("./images/icon-social.svg");
+}
+
+.card-self-care {
+  background-color: #f1c65b;
+  background-image: url("./images/icon-self-care.svg");
+}
+
+.card-content {
+  background-color: #1c1f4a;
+  border-radius: 15px;
+  padding: 28px 24px;
+}
+
+.card-content:hover {
+  background-color: #34397b;
+  cursor: pointer;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-title {
+  color: white;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.btn-options {
+  background: none;
+  border: none;
+  display: flex;
+  padding: 4px;
+}
+
+.btn-options:hover {
+  cursor: pointer;
+}
+
+.btn-options:hover img {
+  filter: brightness(10);
+}
+
+.btn-options:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+.card-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.hours {
+  color: white;
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.previous {
+  color: #bdc1ff;
+  font-size: 0.9375rem;
+}
+
+@media (min-width: 1024px) {
+  main {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+
+  .profile {
+    grid-row: span 2;
+  }
+
+  .profile-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 32px 32px 80px;
+  }
+
+  .avatar {
+    width: 78px;
+    height: 78px;
+  }
+
+  .profile-name {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  .tabs {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 26px 32px 32px;
+  }
+
+  .card {
+    padding-top: 45px;
+  }
+
+  .card-content {
+    padding: 32px;
+  }
+
+  .card-stats {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 24px;
+  }
+
+  .hours {
+    font-size: 3.5rem;
+  }
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Time tracking dashboard</title>
+</head>
+<body>
+  <main>
+    <section class="profile">
+      <div class="profile-info">
+        <img class="avatar" src="./images/image-jeremy.png" alt="Jeremy Robson avatar">
+        <div>
+          <p class="report-for">Report for</p>
+          <h1 class="profile-name">Jeremy Robson</h1>
+        </div>
+      </div>
+      <div class="tabs">
+        <button type="button" class="btn-tab" data-period="daily">Daily</button>
+        <button type="button" class="btn-tab active" data-period="weekly">Weekly</button>
+        <button type="button" class="btn-tab" data-period="monthly">Monthly</button>
+      </div>
+    </section>
+    <article class="card card-work">
+      <div class="card-content">
+        <div class="card-header">
+          <h2 class="card-title">Work</h2>
+          <button type="button" class="btn-options" aria-label="Work options">
+            <img src="./images/icon-ellipsis.svg" alt="">
+          </button>
+        </div>
+        <div class="card-stats">
+          <p class="hours" data-daily="5hrs" data-weekly="32hrs" data-monthly="103hrs">32hrs</p>
+          <p class="previous" data-daily="Yesterday - 7hrs" data-weekly="Last Week - 36hrs" data-monthly="Last Month - 128hrs">Last Week - 36hrs</p>
+        </div>
+      </div>
+    </article>
+    <article class="card card-play">
+      <div class="card-content">
+        <div class="card-header">
+          <h2 class="card-title">Play</h2>
+          <button type="button" class="btn-options" aria-label="Play options">
+            <img src="./images/icon-ellipsis.svg" alt="">
+          </button>
+        </div>
+        <div class="card-stats">
+          <p class="hours" data-daily="1hr" data-weekly="10hrs" data-monthly="23hrs">10hrs</p>
+          <p class="previous" data-daily="Yesterday - 2hrs" data-weekly="Last Week - 8hrs" data-monthly="Last Month - 29hrs">Last Week - 8hrs</p>
+        </div>
+      </div>
+    </article>
+    <article class="card card-study">
+      <div class="card-content">
+        <div class="card-header">
+          <h2 class="card-title">Study</h2>
+          <button type="button" class="btn-options" aria-label="Study options">
+            <img src="./images/icon-ellipsis.svg" alt="">
+          </button>
+        </div>
+        <div class="card-stats">
+          <p class="hours" data-daily="0hrs" data-weekly="4hrs" data-monthly="13hrs">4hrs</p>
+          <p class="previous" data-daily="Yesterday - 1hr" data-weekly="Last Week - 7hrs" data-monthly="Last Month - 19hrs">Last Week - 7hrs</p>
+        </div>
+      </div>
+    </article>
+    <article class="card card-exercise">
+      <div class="card-content">
+        <div class="card-header">
+          <h2 class="card-title">Exercise</h2>
+          <button type="button" class="btn-options" aria-label="Exercise options">
+            <img src="./images/icon-ellipsis.svg" alt="">
+          </button>
+        </div>
+        <div class="card-stats">
+          <p class="hours" data-daily="1hr" data-weekly="4hrs" data-monthly="11hrs">4hrs</p>
+          <p class="previous" data-daily="Yesterday - 1hr" data-weekly="Last Week - 5hrs" data-monthly="Last Month - 18hrs">Last Week - 5hrs</p>
+        </div>
+      </div>
+    </article>
+    <article class="card card-social">
+      <div class="card-content">
+        <div class="card-header">
+          <h2 class="card-title">Social</h2>
+          <button type="button" class="btn-options" aria-label="Social options">
+            <img src="./images/icon-ellipsis.svg" alt="">
+          </button>
+        </div>
+        <div class="card-stats">
+          <p class="hours" data-daily="1hr" data-weekly="5hrs" data-monthly="21hrs">5hrs</p>
+          <p class="previous" data-daily="Yesterday - 3hrs" data-weekly="Last Week - 10hrs" data-monthly="Last Month - 23hrs">Last Week - 10hrs</p>
+        </div>
+      </div>
+    </article>
+    <article class="card card-self-care">
+      <div class="card-content">
+        <div class="card-header">
+          <h2 class="card-title">Self Care</h2>
+          <button type="button" class="btn-options" aria-label="Self Care options">
+            <img src="./images/icon-ellipsis.svg" alt="">
+          </button>
+        </div>
+        <div class="card-stats">
+          <p class="hours" data-daily="0hrs" data-weekly="2hrs" data-monthly="7hrs">2hrs</p>
+          <p class="previous" data-daily="Yesterday - 1hr" data-weekly="Last Week - 2hrs" data-monthly="Last Month - 11hrs">Last Week - 2hrs</p>
+        </div>
+      </div>
+    </article>
+  </main>
+  <script>
+    const tabButtons = document.querySelectorAll(".btn-tab");
+    const hoursList = document.querySelectorAll(".hours");
+    const previousList = document.querySelectorAll(".previous");
+    tabButtons.forEach((button) => {
+      button.addEventListener("click", function () {
+        const period = button.dataset.period;
+        tabButtons.forEach((btn) => btn.classList.remove("active"));
+        button.classList.add("active");
+        hoursList.forEach((item) => {
+          item.textContent = item.dataset[period];
+        });
+        previousList.forEach((item) => {
+          item.textContent = item.dataset[period];
+        });
+      });
+    });
+  </script>
+</body>
+</html>
